@@ -1,6 +1,7 @@
+
 create table member2(
 id varchar2(20) primary key,
---primary key´Â values°¡ Áßº¹ÀÌ ¾ÈµÊ ¿©±â¼± id
+--primary keyëŠ” valuesê°€ ì¤‘ë³µì´ ì•ˆë¨ ì—¬ê¸°ì„  id
 pw varchar2(20),
 name varchar2(20),
 hobby1 varchar2(20),
@@ -11,79 +12,69 @@ gender varchar2(20),
 address varchar2(20));
 
 insert into member2 
---value°ª ´Ù ³ÖÀ»°Å¸é ¿­ °ª ¾È ³Ö¾îµµ µÊ
-values('nate','4444','³×ÀÌÆ®','¼ö¿µ','µ¶¼­','0','0','¿©','¼­¿ï½Ã');
-
-
-insert into member2 (id,pw,name,hobby1,hobby2,hobby3,hobby4,gender,address) 
-values('naver','1111','³×ÀÌ¹ö','¼ö¿µ','µ¶¼­','Á¶±ë','¿ä¸®','³²','°æ±âµµ');
+--valueê°’ ë‹¤ ë„£ì„ê±°ë©´ ì—´ ê°’ ì•ˆ ë„£ì–´ë„ ë¨
+values('nate','4444','ë„¤ì´íŠ¸','ìˆ˜ì˜','ë…ì„œ','0','0','ì—¬','ì„œìš¸ì‹œ');
 
 insert into member2 (id,pw,name,hobby1,hobby2,hobby3,hobby4,gender,address) 
-values('daum','2222','´ÙÀ½','¼ö¿µ','0','Á¶±ë','0','¿©','Á¦ÁÖµµ');
+values('naver','1111','ë„¤ì´ë²„','ìˆ˜ì˜','ë…ì„œ','ì¡°ê¹…','ìš”ë¦¬','ë‚¨','ê²½ê¸°ë„');
 
 insert into member2 (id,pw,name,hobby1,hobby2,hobby3,hobby4,gender,address) 
-values('google','3333','±¸±Û','¼ö¿µ','0','0','0','³²','¹Ì±¹');
+values('daum','2222','ë‹¤ìŒ','ìˆ˜ì˜','0','ì¡°ê¹…','0','ì—¬','ì œì£¼ë„');
 
---0À» ÀÔ·ÂÇÏ¸é 0ÀÌ µé¾î°¡°í ''À» ÀÔ·ÂÇÏ¸é (null)
+insert into member2 (id,pw,name,hobby1,hobby2,hobby3,hobby4,gender,address) 
+values('google','3333','êµ¬ê¸€','ìˆ˜ì˜','0','0','0','ë‚¨','ë¯¸êµ­');
+                 
+insert into member2 values('youtube','','ìœ íŠœë¸Œ','','','','','ì—¬','ë¯¸êµ­');
+
+--0ì„ ì…ë ¥í•˜ë©´ 0ì´ ë“¤ì–´ê°€ê³  ''ì„ ì…ë ¥í•˜ë©´ (null)
 
 select * from member2;
 
-insert into member2 values('youtube','','À¯Æ©ºê','','','','','¿©','¹Ì±¹');
-
-
 delete from member2 where id='youtube';
-
 delete from member2 where id='google';
 
 commit;
 
-update member2 set hobby1='swim' where hobby1='¼ö¿µ';
-update member2 set hobby2='read' where hobby2='µ¶¼­';
-update member2 set hobby3='run' where hobby3='Á¶±ë';
-update member2 set hobby4='cook' where hobby4='¿ä¸®';
+update member2 set hobby1='swim' where hobby1='ìˆ˜ì˜';
+update member2 set hobby2='read' where hobby2='ë…ì„œ';
+update member2 set hobby3='run' where hobby3='ì¡°ê¹…';
+update member2 set hobby4='cook' where hobby4='ìš”ë¦¬';
 
-update member2 set hobby2='¾øÀ½' where hobby2='0';
-update member2 set hobby3='¾øÀ½' where hobby3='0';
-update member2 set hobby4='¾øÀ½' where hobby4='0';
+update member2 set hobby2='ì—†ìŒ' where hobby2='0';
+update member2 set hobby3='ì—†ìŒ' where hobby3='0';
+update member2 set hobby4='ì—†ìŒ' where hobby4='0';
 
 desc member2;
 
-
-insert into member2 values('youtube','5555','À¯Æ©ºê','¼ö¿µ','0','0','0','¿©','¹Ì±¹');
+insert into member2 values('youtube','5555','ìœ íŠœë¸Œ','ìˆ˜ì˜','0','0','0','ì—¬','ë¯¸êµ­');
 
 select department_id, manager_id from departments;
 
-
 select employee_id, emp_name, salary, hire_date from employees;
-
 select emp_name, job_id, salary, salary*1300, salary*12*1300 from employees;
-
 select * from employees;
+                 
 
 select salary*1300 ,salary*1300 + (salary*1300)*nvl(commission_pct,0) from employees;
---nvl(commision_pct,0) commsion°ª¿¡ nullÆ÷ÀÎÆ®°¡ ÀÖÀ¸¸é 0À¸·Î º¯°æ
+--nvl(commision_pct,0) commsionê°’ì— nullí¬ì¸íŠ¸ê°€ ìˆìœ¼ë©´ 0ìœ¼ë¡œ ë³€ê²½
 
 
-insert into member (id,pw,name,phone) values('bce','234','±èÀ¯½Å','010-2345-6789');
-
-insert into member (id,pw,name,phone) values('cde','234','À¯°ü¼ø','010-3333-4567');
-
-insert into member (id,pw,name,phone) values('def','345','°­°¨Âù','010-4444-5678');
+insert into member (id,pw,name,phone) values('bce','234','ê¹€ìœ ì‹ ','010-2345-6789');
+insert into member (id,pw,name,phone) values('cde','234','ìœ ê´€ìˆœ','010-3333-4567');
+insert into member (id,pw,name,phone) values('def','345','ê°•ê°ì°¬','010-4444-5678');
 
 select * from member ;
-
 select * from member where id='bce';
 
 commit;
 
-update member set pw='234', name='ÀÌÀ²°î', phone='010-2222-3456' where id='bce';
-
+update member set pw='234', name='ì´ìœ¨ê³¡', phone='010-2222-3456' where id='bce';
 update member set pw='1111' where name='bce';
 
 select * from member where id='bce' and phone ='010-4444-5555';
 
 
-
+                 
 
 create table job_member(
 
@@ -96,8 +87,8 @@ address varchar2(50));
 
 commit;
 
-insert into job_member values('a001','È«±æµ¿','400','','010-1111-1111','¼­¿ï');
-insert into job_member values('a002','À¯°ü¼ø','450','1','010-1111-1111','¼­¿ï');
+insert into job_member values('a001','í™ê¸¸ë™','400','','010-1111-1111','ì„œìš¸');
+insert into job_member values('a002','ìœ ê´€ìˆœ','450','1','010-1111-1111','ì„œìš¸');
 
 create table job_mem2(
 id varchar2(20) primary key,
@@ -108,11 +99,11 @@ phone varchar2(20),
 address varchar2(50));
 
 
-insert into job_mem2 values('a001', 'È«±æµ¿', 400,1,'010-1111-1111','¼­¿ï');
-insert into job_mem2 values('a002', 'À¯°ü¼ø', 450,'','010-2222-2222','°æ±â');
-insert into job_mem2 values('a003', '±èÀ¯½Å', 350,'','010-3333-3333','ÀÎÃµ');
-insert into job_mem2 values('a004', '°­°¨Âù', 550,1,'010-4444-4444','ºÎ»ê');
-insert into job_mem2 values('a005', '±è±¸', 250,'','010-5555-5555','´ëÀü');
+insert into job_mem2 values('a001', 'í™ê¸¸ë™', 400,1,'010-1111-1111','ì„œìš¸');
+insert into job_mem2 values('a002', 'ìœ ê´€ìˆœ', 450,'','010-2222-2222','ê²½ê¸°');
+insert into job_mem2 values('a003', 'ê¹€ìœ ì‹ ', 350,'','010-3333-3333','ì¸ì²œ');
+insert into job_mem2 values('a004', 'ê°•ê°ì°¬', 550,1,'010-4444-4444','ë¶€ì‚°');
+insert into job_mem2 values('a005', 'ê¹€êµ¬', 250,'','010-5555-5555','ëŒ€ì „');
 
 commit;
 
