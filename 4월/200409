@@ -28,7 +28,6 @@ insert into member2
 --value값 다 넣을거면 열 값 안 넣어도 됨
 values('nate','4444','네이트','수영','독서','0','0','여','서울시');
 
-
 insert into member2 (id,pw,name,hobby1,hobby2,hobby3,hobby4,gender,address) 
 values('naver','1111','네이버','수영','독서','조깅','요리','남','경기도');
 
@@ -44,9 +43,7 @@ select * from member2;
 
 insert into member2 values('youtube','','유튜브','','','','','여','미국');
 
-
 delete from member2 where id='youtube';
-
 delete from member2 where id='google';
 
 commit;
@@ -55,23 +52,19 @@ update member2 set hobby1='swim' where hobby1='수영';
 update member2 set hobby2='read' where hobby2='독서';
 update member2 set hobby3='run' where hobby3='조깅';
 update member2 set hobby4='cook' where hobby4='요리';
-
 update member2 set hobby2='없음' where hobby2='0';
 update member2 set hobby3='없음' where hobby3='0';
 update member2 set hobby4='없음' where hobby4='0';
 
 desc member2;
 
-
 insert into member2 values('youtube','5555','유튜브','수영','0','0','0','여','미국');
 
+
+
 select department_id, manager_id from departments;
-
-
 select employee_id, emp_name, salary, hire_date from employees;
-
 select emp_name, job_id, salary, salary*1300, salary*12*1300 from employees;
-
 select * from employees;
 
 select salary*1300 ,salary*1300 + (salary*1300)*nvl(commission_pct,0) from employees;
@@ -79,20 +72,16 @@ select salary*1300 ,salary*1300 + (salary*1300)*nvl(commission_pct,0) from emplo
 
 
 insert into member (id,pw,name,phone) values('bce','234','김유신','010-2345-6789');
-
 insert into member (id,pw,name,phone) values('cde','234','유관순','010-3333-4567');
-
 insert into member (id,pw,name,phone) values('def','345','강감찬','010-4444-5678');
 
 select * from member ;
-
 select * from member where id='bce';
+select * from member where id='bce' and phone ='010-4444-5555';
 
 commit;
 
 update member set pw='234', name='이율곡', phone='010-2222-3456' where id='bce';
-
 update member set pw='1111' where name='bce';
 
-select * from member where id='bce' and phone ='010-4444-5555';
 
