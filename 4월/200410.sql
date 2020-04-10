@@ -38,3 +38,21 @@ salary*12 as 연봉 from employees;
 --""로 묶으면 특수문자까지 별칭에 입력 가능, 대소문자 구별 가능
 --그냥 as 별칭 입력하면 대문자
 
+create table koitt_mem(
+id varchar2(20) primary key,
+name varchar2(20),
+pay number(7),
+t_day number(2));
+
+commit;
+
+update koitt_mem set id ='ko2' where id='ko3'; 
+
+insert into koitt_mem (id,name,pay,t_day) values ('ko1','허영무','30000','20');
+insert into koitt_mem (id,name,pay,t_day) values ('ko2','조준호','30000','20');
+insert into koitt_mem (id,name,pay,t_day) values ('ko3','홍길동','30000','');
+
+select * from koitt_mem;
+
+select name, pay*nvl(t_day,0) as 이번달수당 from koitt_mem;
+
