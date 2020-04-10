@@ -145,5 +145,8 @@ select * from employees where salary in(3000,4000,5000);
 select * from employees where salary in(3000,4000,5000) or employee_id>=190;
 select * from employees where salary in(3000,4000,5000) and employee_id>=190;
 
+select * from employees where department_id in (30,40,50) and salary>=5000 order by department_id, salary;
 
+select * from employees where commission_pct is null;
+--null은 is로 찾아야 함(비교연산자 x)
 
