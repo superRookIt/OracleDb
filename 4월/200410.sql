@@ -56,3 +56,94 @@ select * from koitt_mem;
 
 select name, pay*nvl(t_day,0) as 이번달수당 from koitt_mem;
 
+select * from employees;
+
+select employee_id as 사번, emp_name as 사원이름, email as 이메일, phone_number as 연락처, hire_date as 입사일,
+salary as 월급, manager_id as "매니저 아이디", commission_pct as 인센티브 from employees; 
+
+select emp_name, department_id from employees;
+
+select distinct department_id from employees order by department_id ASC;
+--distinct 중복 제거
+
+select employee_id from employees order by employee_id desc;
+
+select * from employees order by manager_id desc, salary desc;
+
+select distinct job_id from employees;
+
+select * from employees;
+
+select distinct manager_id from employees order by manager_id asc;
+
+select * from employees where salary >=5000 order by salary asc;
+
+select * from employees where salary+(salary*nvl(commission_pct,0))>8000 order by salary asc;
+
+select salary from employees;
+
+select count(salary) from employees where salary != 10000;
+--count  : 개수를 출력
+
+select salary from employees where salary >= 10000;
+
+select * from employees where employee_id = 200;
+--사번 200번
+
+select * from employees where employee_id >=150;
+--사번 150 이상
+
+select employee_id, emp_name, salary from employees where salary>=4000 and salary<=8000 order by salary asc;
+--and, between
+
+select * from employees;
+
+select * from employees where emp_name='Pat Fay';
+
+select * from employees where emp_name like 'P%';
+--like p%: p로 시작되는 문자
+
+select * from employees where emp_name like '%P%';
+--like %p%: p가 들어가 있는 모든 
+
+select * from employees where emp_name like '_o%';
+--두번째에 o가 들어간 ( _ : 자리수)
+
+select * from employees where emp_name like '__o%';
+--세번째에 o가 들어간
+
+select * from employees where hire_date <'07/01/01' order by hire_date asc;
+
+select * from employees;
+
+select count(*) from employees where salary>5000 and department_id =50 ;
+
+select * from employees where salary>=4000 and department_id=30;
+
+select * from employees where salary = 3000 or salary = 4000 or salary = 5000 or salary = 6000 or salary = 10000 order by salary asc;
+
+select *  from employees where employee_id=140 or employee_id=150 order by employee_id;
+
+--
+select *  from employees where employee_id>=150 and employee_id<=160 order by employee_id;
+select *  from employees where employee_id between 150 and 160 order by employee_id;
+--150~160번, between and
+
+select * from employees where salary<5000 or salary>10000 order by salary;
+select *  from employees where salary not between 5000 and 10000 order by salary;
+--not between and
+
+select * from employees where hire_date between '00/01/01' and '05/12/31' order by hire_date;
+
+select * from employees order by emp_name asc;
+select * from employees order by emp_name desc;
+
+select * from employees where salary=3000 or salary=4000 or salary=5000;
+select * from employees where salary in(3000,4000,5000);
+--in('','','')
+
+select * from employees where salary in(3000,4000,5000) or employee_id>=190;
+select * from employees where salary in(3000,4000,5000) and employee_id>=190;
+
+
+
