@@ -1,5 +1,5 @@
---1521 ³»ºÎ Æ÷Æ®
---8080 ¿ÜºÎ Æ÷
+--1521 ë‚´ë¶€ í¬íŠ¸
+--8080 ì™¸ë¶€ í¬
 
 select * from tab;
 
@@ -26,15 +26,15 @@ hobby4 number(1),
 gender varchar(3),
 address varchar(50));
 
---number(precision,scale)/ precision ¼Ò¼öÁ¡ Æ÷ÇÔ ÀüÃ¼ ÀÚ¸®¼ö, scaleÀº ¼Ò¼öÁ¡ ÀÌÇÏ ÀÚ¸®¼ö°í scale »ı·«ÇÏ¸é Á¤¼ö°ª¸¸ ÀúÀå
---varchar2 °¡º¯Àû ±æÀÌ ¹®ÀÚ¿­ ÀúÀå
-
+--number(precision,scale)/ precision ì†Œìˆ˜ì  í¬í•¨ ì „ì²´ ìë¦¬ìˆ˜, scaleì€ ì†Œìˆ˜ì  ì´í•˜ ìë¦¬ìˆ˜ê³  scale ìƒëµí•˜ë©´ ì •ìˆ˜ê°’ë§Œ ì €ì¥
+--varchar2 ê°€ë³€ì  ê¸¸ì´ ë¬¸ìì—´ ì €ì¥
 
 select * from employees;
-select employee_id, emp_name, salary as ¿ù±Ş, salary+(salary*nvl(commission_pct,0)) as "¿ù±Ş(ÀÎ¼¾Æ¼ºêÆ÷ÇÔ)", salary*12 as ¿¬ºÀ from employees;
---nvl : nullÆ÷ÀÎÆ® ÇÔ¼ö
---as¸¦ ºÙÀÌ¸é ¿­ ÀÌ¸§ º¯°æ°¡´É, º°Äª(alias?)
---""·Î ¹­À¸¸é Æ¯¼ö¹®ÀÚ±îÁö º°Äª¿¡ ÀÔ·Â °¡´É
 
-
+select employee_id as ì‚¬ë²ˆ, emp_name as "Name", salary as ì›”ê¸‰, salary+(salary*nvl(commission_pct,0)) as "ì›”ê¸‰(ì¸ì„¼í‹°ë¸Œí¬í•¨)", 
+salary*12 as ì—°ë´‰ from employees;
+--nvl : nullí¬ì¸íŠ¸ í•¨ìˆ˜
+--asë¥¼ ë¶™ì´ë©´ ì—´ ì´ë¦„ ë³€ê²½ê°€ëŠ¥, ë³„ì¹­(alias)
+--""ë¡œ ë¬¶ìœ¼ë©´ íŠ¹ìˆ˜ë¬¸ìê¹Œì§€ ë³„ì¹­ì— ì…ë ¥ ê°€ëŠ¥, ëŒ€ì†Œë¬¸ì êµ¬ë³„ ê°€ëŠ¥
+--ê·¸ëƒ¥ as ë³„ì¹­ ì…ë ¥í•˜ë©´ ëŒ€ë¬¸ì
 
