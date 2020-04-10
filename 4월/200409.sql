@@ -52,12 +52,10 @@ select department_id, manager_id from departments;
 
 select employee_id, emp_name, salary, hire_date from employees;
 select emp_name, job_id, salary, salary*1300, salary*12*1300 from employees;
-select * from employees;
-                 
+select * from employees;              
 
 select salary*1300 ,salary*1300 + (salary*1300)*nvl(commission_pct,0) from employees;
 --nvl(commision_pct,0) commsion값에 null포인트가 있으면 0으로 변경
-
 
 insert into member (id,pw,name,phone) values('bce','234','김유신','010-2345-6789');
 insert into member (id,pw,name,phone) values('cde','234','유관순','010-3333-4567');
@@ -71,10 +69,7 @@ commit;
 update member set pw='234', name='이율곡', phone='010-2222-3456' where id='bce';
 update member set pw='1111' where name='bce';
 
-select * from member where id='bce' and phone ='010-4444-5555';
-
-
-                 
+select * from member where id='bce' and phone ='010-4444-5555';             
 
 create table job_member(
 
@@ -98,7 +93,6 @@ comm number(3),
 phone varchar2(20),
 address varchar2(50));
 
-
 insert into job_mem2 values('a001', '홍길동', 400,1,'010-1111-1111','서울');
 insert into job_mem2 values('a002', '유관순', 450,'','010-2222-2222','경기');
 insert into job_mem2 values('a003', '김유신', 350,'','010-3333-3333','인천');
@@ -110,5 +104,3 @@ commit;
 select * from job_mem2;
 
 select name, salary*10000,(salary*10000)+(nvl(comm,0)*500000) from job_mem2;
-
-
