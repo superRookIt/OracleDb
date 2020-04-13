@@ -1,4 +1,3 @@
-
 insert into ppap values('ijk','238','홍길순','010-2354-3434');
 insert into ppap values('gfd','367','김유홍','010-3454-3433');
 insert into ppap values('wjl','845','홍길표','010-1365-3455');
