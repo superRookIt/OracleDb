@@ -1,13 +1,6 @@
-insert into ppap values('ijk','238','홍길순','010-2354-3434');
-insert into ppap values('gfd','367','김유홍','010-3454-3433');
-insert into ppap values('wjl','845','홍길표','010-1365-3455');
-insert into ppap values('fjb','053','홍준임','010-3434-3454');
-
 select * from ppap;
 
 commit;
-
---desc [테이블명] 각 필드의 유형을 볼 수 있음
 
 select * from tab;
 
@@ -32,7 +25,7 @@ select * from mem3;
 select * from employees;
 
 select sysdate-hire_date as 근무일수, hire_date , hire_date -1 from employees;
---sysdate-hire_date(현재날짜 - hire_date)
+--sysdate-hire_date(현재날짜 - hire_date) substract[빼기]
 
 select 34.78, round(34.7558,2), floor(34.78) from dual; --34.76
 select 34.78, round(2834.6789,-1), floor(34.78), trunc(34.5678) from dual; --34.78/2830/34/34
@@ -57,6 +50,7 @@ select * from employees where hire_date >='2007/01/01' order by salary;
 select * from employees;
 
 desc employees;
+--desc [테이블명] 각 필드의 유형을 볼 수 있음
 
 commit;
 
