@@ -1,4 +1,3 @@
-select * from tab;
 
 create table mem3(
 id varchar2(20) primary key,
@@ -6,32 +5,32 @@ pw varchar2(20),
 name varchar2(20),
 b_date date);
 
---date´Â ³¯Â¥ 00/00/00 
+--dateëŠ” ë‚ ì§œ 00/00/00 
 
-insert into mem3 values('abc','1234','È«±æµ¿','20/04/13');
+insert into mem3 values('abc','1234','í™ê¸¸ë™','20/04/13');
 
 select sysdate from dual; 
---»õ·Î¿î ÇàÀ» ¸¸µé¾îÁÖ´Â
+--ìƒˆë¡œìš´ í–‰ì„ ë§Œë“¤ì–´ì£¼ëŠ”
 
-insert into mem3 values('bcd','234','±èÀ¯½Å',sysdate);
---sysdate ¿À´Ã ³¯Â¥ 
+insert into mem3 values('bcd','234','ê¹€ìœ ì‹ ',sysdate);
+--sysdate ì˜¤ëŠ˜ ë‚ ì§œ 
 
 select * from mem3;
 
 select * from employees;
 
-select sysdate-hire_date as ±Ù¹«ÀÏ¼ö, hire_date , hire_date -1 from employees;
---sysdate-hire_date(ÇöÀç³¯Â¥ - hire_date)
+select sysdate-hire_date as ê·¼ë¬´ì¼ìˆ˜, hire_date , hire_date -1 from employees;
+--sysdate-hire_date(í˜„ì¬ë‚ ì§œ - hire_date)
 
 select 34.78, round(34.7558,2), floor(34.78) from dual; --34.76
 select 34.78, round(2834.6789,-1), floor(34.78), trunc(34.5678) from dual; --34.78/2830/34/34
---round(¼ıÀÚ,¹İ¿Ã¸² ÀÚ¸®¼ö) , floor ¹ö¸²
+--round(ìˆ«ì,ë°˜ì˜¬ë¦¼ ìë¦¬ìˆ˜) , floor ë²„ë¦¼
 
 select  distinct manager_id from employees where manager_id=100 order by manager_id asc;
---distinct Áßº¹Á¦°Å
+--distinct ì¤‘ë³µì œê±°
 
 select distinct manager_id from employees where manager_id <> 100 order by manager_id asc;
--- <> ¾Æ´Ñ °Å 
+-- <> ì•„ë‹Œ ê±° 
 
 select distinct manager_id from employees where manager_id is null;
 
@@ -46,10 +45,9 @@ select * from employees where hire_date >='2007/01/01' order by salary;
 select * from employees;
 
 desc employees;
---desc [Å×ÀÌºí¸í] °¢ ÇÊµåÀÇ À¯ÇüÀ» º¼ ¼ö ÀÖÀ½
+--desc [í…Œì´ë¸”ëª…] ê° í•„ë“œì˜ ìœ í˜•ì„ ë³¼ ìˆ˜ ìˆìŒ
 
 commit;
 
-select sysdate -1 as ¾îÁ¦, sysdate as ¿À´Ã,sysdate+1 as ³»ÀÏ from dual;
---dualÀº dummy data
-
+select sysdate -1 as ì–´ì œ, sysdate as ì˜¤ëŠ˜,sysdate+1 as ë‚´ì¼ from dual;
+--dualì€ dummy data
