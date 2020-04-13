@@ -23,7 +23,8 @@ select sysdate-hire_date as 근무일수, hire_date , hire_date -1 from employee
 --sysdate-hire_date(현재날짜 - hire_date)
 
 select 34.78, round(34.7558,2), floor(34.78) from dual; --34.76
-select 34.78, round(2834.6789,-1), floor(34.78), trunc(34.5678) from dual; --34.78/2830/34/34
+select 34.78, round(2834.6789,-1), floor(34.78), trunc(34.5678) from dual; 
+--34.78/2830/34/34
 --round(숫자,반올림 자리수) , floor 버림
 
 select  distinct manager_id from employees where manager_id=100 order by manager_id asc;
