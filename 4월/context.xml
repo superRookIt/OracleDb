@@ -21,8 +21,7 @@
 	<!-- <Manager pathname="" /> -->
 
 	<Resource
-
-        auth="Container"
+                auth="Container"
 		driverClassName="oracle.jdbc.driver.OracleDriver"
 		url="jdbc:oracle:thin:@localhost:1521:orcle"
 		username="ora_user"
