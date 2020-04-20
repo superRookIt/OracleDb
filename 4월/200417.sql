@@ -5,29 +5,29 @@ pw varchar2(20) not null,
 phone varchar2(20));
 
 --not null
---primary key´Â not null and unique
+--primary keyëŠ” not null and unique
 
 commit;
 
 desc m_0417;
 
-insert into m_0417 values(1111,'È«±æµ¿','1234','010-1111-1111');
+insert into m_0417 values(1111,'í™ê¸¸ë™','1234','010-1111-1111');
 
 select * from m_0417;
 
 update m_0417 set id=1 where id=1111;
 
-insert into m_0417 values(2,'±èÀ¯½Å','2345','010-2222-2222');
+insert into m_0417 values(2,'ê¹€ìœ ì‹ ','2345','010-2222-2222');
 
---creat, alter, drop ÀÚµ¿À¸·Î commit µÊ
---insert,update,delete,select : commit ÇØÁà¾ß ÇÔ
---·Ñ¹éÀº commit ±âÁØÀ¸·Î
+--creat, alter, drop ìë™ìœ¼ë¡œ commit ë¨
+--insert,update,delete,select : commit í•´ì¤˜ì•¼ í•¨
+--ë¡¤ë°±ì€ commit ê¸°ì¤€ìœ¼ë¡œ
 
-insert into m_0417 values(3,'À¯°ü¼ø','4567','010-3333-3333');
+insert into m_0417 values(3,'ìœ ê´€ìˆœ','4567','010-3333-3333');
 
---insert into m_0417 values(4,'','7890','010-4444-4444'); null °ª »ğÀÔ x
+--insert into m_0417 values(4,'','7890','010-4444-4444'); null ê°’ ì‚½ì… x
 
-insert into m_0417 values(4,'±è±¸','7890',''); 
+insert into m_0417 values(4,'ê¹€êµ¬','7890',''); 
 
 create table m_0417_2(
 id number(4) primary key,
@@ -37,14 +37,14 @@ phone varchar2(20));
 
 --unique
 
-insert into m_0417_2 values(1,'1234','È«±æµ¿','010-1111-1111');
+insert into m_0417_2 values(1,'1234','í™ê¸¸ë™','010-1111-1111');
 
-insert into m_0417_2 values(2,'2345','È«±æÀÚ','010-2222-2222');
+insert into m_0417_2 values(2,'2345','í™ê¸¸ì','010-2222-2222');
 
 select * from m_0417_2;
 
 insert into m_0417_2 values(3,'3456','','010-3333-3333'); 
---unique null°ª °¡´É
+--unique nullê°’ ê°€ëŠ¥
 
 drop table m_0417;
 drop table m_0417_2;
@@ -65,14 +65,13 @@ name varchar2(20) not null,
 salary number(4) check (salary between 500 and 5000),
 gender varchar2(1) check (gender in('M','F')));
 
---CHECK
---´ë¼Ò¹®ÀÚ ±¸ºĞÇÔ
+--CHECKëŠ” ëŒ€ì†Œë¬¸ì êµ¬ë¶„í•¨
 
-insert into m_0417_4 values(1,'È«±æµ¿','500','M');
+insert into m_0417_4 values(1,'í™ê¸¸ë™','500','M');
 
-insert into m_0417_4 values(2,'È«µ¿±æ','500','F');
+insert into m_0417_4 values(2,'í™ë™ê¸¸','500','F');
 
-delete m_0417_4 where name='È«µ¿±æ';
+delete m_0417_4 where name='í™ë™ê¸¸';
 
 select * from m_0417_4;
 
@@ -81,14 +80,14 @@ commit;
 create table dept01(
 id number(4) primary key,
 name varchar2(20) not null,
-city varchar2(20) check(city in('¼­¿ï','°æ±â','ÀÎÃµ')),
+city varchar2(20) check(city in('ì„œìš¸','ê²½ê¸°','ì¸ì²œ')),
 phone varchar2(20) unique);
 
-insert into dept01 values (1,'À¯ºó','¼­¿ï','010-1111-1111');
-insert into dept01 values (2,'¼ÒÈñ','°æ±â','010-1112-1112');
-insert into dept01 values (3,'¼±¿¹','ÀÎÃµ','010-1113-1113');
-insert into dept01 values (4,'¼±¹Ì','ÀÎÃµ','010-1114-1114');
-insert into dept01 values (5,'¿¹Àº','°æ±â','010-1115-1115');
+insert into dept01 values (1,'ìœ ë¹ˆ','ì„œìš¸','010-1111-1111');
+insert into dept01 values (2,'ì†Œí¬','ê²½ê¸°','010-1112-1112');
+insert into dept01 values (3,'ì„ ì˜ˆ','ì¸ì²œ','010-1113-1113');
+insert into dept01 values (4,'ì„ ë¯¸','ì¸ì²œ','010-1114-1114');
+insert into dept01 values (5,'ì˜ˆì€','ê²½ê¸°','010-1115-1115');
 
 select * from dept01;
 
@@ -101,18 +100,18 @@ s_math number(3) check(s_math<=100),
 s_avg number(4,1),
 s_total number(3) check(s_total<=300),
 s_rank number(5) default 0,
-s_address varchar2(20) default '¼­¿ï',
+s_address varchar2(20) default 'ì„œìš¸',
 s_date date default sysdate);
 
---default µ¥ÀÌÅÍ°ªÀ» ¾Æ¹«°Íµµ ¾È ³ÖÀ¸¸é ³ÖÀ» °ª
+--default ë°ì´í„°ê°’ì„ ì•„ë¬´ê²ƒë„ ì•ˆ ë„£ìœ¼ë©´ ë„£ì„ ê°’
 
 commit;
 
 --insert into student (s_num, s_name, s_kor, s_eng, s_math, s_total, s_avg) 
---values (1,'È«±æµ¿',100,100,100,(s_kor+s_eng+s_math),(s_kor+s_eng+s_math)/3);
+--values (1,'í™ê¸¸ë™',100,100,100,(s_kor+s_eng+s_math),(s_kor+s_eng+s_math)/3);
 
 insert into student (s_num, s_name, s_kor, s_eng, s_math, s_total, s_avg) 
-values (1,'È«±æµ¿',100,100,100,300,300/3);
+values (1,'í™ê¸¸ë™',100,100,100,300,300/3);
 
 select * from student;
 
@@ -123,7 +122,7 @@ minvalue 1
 maxvalue 10000
 nocycle;
 
--- ½ÃÄı½º
+-- ì‹œí€¸ìŠ¤
 
 desc student;
 
@@ -132,13 +131,13 @@ delete from student where s_num=1;
 select * from student;
 
 insert into student (s_num, s_name, s_kor, s_eng, s_math, s_total, s_avg) 
-values (b_seq.nextval, 'È«±æµ¿', 100, 100, 100, 300, 300/3);
+values (b_seq.nextval, 'í™ê¸¸ë™', 100, 100, 100, 300, 300/3);
 
 insert into student (s_num, s_name, s_kor, s_eng, s_math, s_total, s_avg) 
-values (b_seq.nextval, 'À¯°ü¼ø', 100, 80, 90, 270, 270/3);
+values (b_seq.nextval, 'ìœ ê´€ìˆœ', 100, 80, 90, 270, 270/3);
 
 select b_seq.currval from dual;
---½ÃÄı½º ÇöÀç±îÁö ÁøÇàµÈ ¼ıÀÚ 
+--ì‹œí€¸ìŠ¤ í˜„ì¬ê¹Œì§€ ì§„í–‰ëœ ìˆ«ì 
 
 create sequence d_seq
 increment by 2
@@ -148,7 +147,7 @@ maxvalue 10000
 nocycle;
 
 select d_seq.currval from dual;
---½ÃÄı½º ÇöÀç±îÁö ÁøÇàµÈ ¼ıÀÚ 
+--ì‹œí€¸ìŠ¤ í˜„ì¬ê¹Œì§€ ì§„í–‰ëœ ìˆ«ì 
 
 
 drop table dept2;
@@ -160,7 +159,7 @@ d date default sysdate);
 
 commit;
 
-insert into dept2 values(d_seq.nextval, 'È«±æµ¿','');
+insert into dept2 values(d_seq.nextval, 'í™ê¸¸ë™','');
 
 select * from dept2;
 
@@ -176,7 +175,7 @@ phone2 varchar2(20),
 phone3 varchar2(20),
 gender varchar2(20));
 
-insert into m2 values('ccc','±è¶ó¿µ','1234','010','3111','2222','¿©ÀÚ');
+insert into m2 values('ccc','ê¹€ë¼ì˜','1234','010','3111','2222','ì—¬ì');
 
 commit;
 
@@ -189,11 +188,11 @@ email varchar2(100) not null,
 address varchar2(100),
 phone varchar2(20),
 birth date,
-gender varchar2(10) check(gender in('³²¼º','¿©¼º')),
+gender varchar2(10) check(gender in('ë‚¨ì„±','ì—¬ì„±')),
 news varchar2(10),
 sms varchar2(10));
 
---order´Â ÀÌ¸§À¸·Î »ç¿ëÇÒ ¼ö ¾øÀ½...!!
+--orderëŠ” ì´ë¦„ìœ¼ë¡œ ì‚¬ìš©í•  ìˆ˜ ì—†ìŒ...!!
 
 create sequence three
 increment by 1
@@ -204,11 +203,11 @@ nocycle;
 
 drop table member3;
 
-insert into member3 values(three.nextval,'aaaa','1234','°¡³ª´Ù','gana@naver.com','¼­¿ï½Ã ±İÃµ±¸','010-1111-1111','1990/01/01','³²¼º','¿¹','¾Æ´Ï¿ä');
-insert into member3 values(three.nextval,'baaa','2234','³ª³ª´Ù','gana1@naver.com','¼­¿ï½Ã ±İÃµ±¸1','010-1111-1111','1990/01/01','³²¼º','¿¹','¿¹');
-insert into member3 values(three.nextval,'caaa','3234','´Ù³ª´Ù','gana2@naver.com','¼­¿ï½Ã ±İÃµ±¸2','010-2111-1111','1991/01/01','¿©¼º','¾Æ´Ï¿ä','¿¹');
-insert into member3 values(three.nextval,'daaa','4234','¶ó³ª´Ù','gana3@naver.com','¼­¿ï½Ã ±İÃµ±¸3','010-3111-1111','1992/01/01','³²¼º','¿¹','¾Æ´Ï¿ä');
-insert into member3 values(three.nextval,'eaaa','5234','¸¶³ª´Ù','gana4@naver.com','¼­¿ï½Ã ±İÃµ±¸4','010-4111-1111','1993/01/01','¿©¼º','¾Æ´Ï¿ä','¾Æ´Ï¿ä');
+insert into member3 values(three.nextval,'aaaa','1234','ê°€ë‚˜ë‹¤','gana@naver.com','ì„œìš¸ì‹œ ê¸ˆì²œêµ¬','010-1111-1111','1990/01/01','ë‚¨ì„±','ì˜ˆ','ì•„ë‹ˆìš”');
+insert into member3 values(three.nextval,'baaa','2234','ë‚˜ë‚˜ë‹¤','gana1@naver.com','ì„œìš¸ì‹œ ê¸ˆì²œêµ¬1','010-1111-1111','1990/01/01','ë‚¨ì„±','ì˜ˆ','ì˜ˆ');
+insert into member3 values(three.nextval,'caaa','3234','ë‹¤ë‚˜ë‹¤','gana2@naver.com','ì„œìš¸ì‹œ ê¸ˆì²œêµ¬2','010-2111-1111','1991/01/01','ì—¬ì„±','ì•„ë‹ˆìš”','ì˜ˆ');
+insert into member3 values(three.nextval,'daaa','4234','ë¼ë‚˜ë‹¤','gana3@naver.com','ì„œìš¸ì‹œ ê¸ˆì²œêµ¬3','010-3111-1111','1992/01/01','ë‚¨ì„±','ì˜ˆ','ì•„ë‹ˆìš”');
+insert into member3 values(three.nextval,'eaaa','5234','ë§ˆë‚˜ë‹¤','gana4@naver.com','ì„œìš¸ì‹œ ê¸ˆì²œêµ¬4','010-4111-1111','1993/01/01','ì—¬ì„±','ì•„ë‹ˆìš”','ì•„ë‹ˆìš”');
 
 select * from member3;
 
