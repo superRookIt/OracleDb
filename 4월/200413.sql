@@ -34,7 +34,7 @@ select  distinct manager_id from employees where manager_id=100 order by manager
 --distinct 중복제거
 
 select distinct manager_id from employees where manager_id <> 100 order by manager_id asc;
--- <> 아닌 거 
+-- <> : 아닌 거 
 
 select distinct manager_id from employees where manager_id is null;
 
