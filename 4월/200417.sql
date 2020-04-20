@@ -4,8 +4,8 @@ name varchar2(20) not null,
 pw varchar2(20) not null,
 phone varchar2(20));
 
---not null
---primary key는 not null and unique
+-- not null
+-- primary key는 not null and unique
 
 commit;
 
@@ -19,13 +19,13 @@ update m_0417 set id=1 where id=1111;
 
 insert into m_0417 values(2,'김유신','2345','010-2222-2222');
 
---creat, alter, drop 자동으로 commit 됨
---insert,update,delete,select : commit 해줘야 함
---롤백은 commit 기준으로
+-- creat, alter, drop 자동으로 commit 됨
+-- insert,update,delete,select : commit 해줘야 함
+-- 롤백은 commit 기준으로
 
 insert into m_0417 values(3,'유관순','4567','010-3333-3333');
 
---insert into m_0417 values(4,'','7890','010-4444-4444'); null 값 삽입 x
+-- insert into m_0417 values(4,'','7890','010-4444-4444'); null 값 삽입 x
 
 insert into m_0417 values(4,'김구','7890',''); 
 
@@ -35,7 +35,7 @@ pw varchar2(20) not null,
 name varchar2(20) unique,
 phone varchar2(20));
 
---unique
+-- unique
 
 insert into m_0417_2 values(1,'1234','홍길동','010-1111-1111');
 
@@ -44,7 +44,7 @@ insert into m_0417_2 values(2,'2345','홍길자','010-2222-2222');
 select * from m_0417_2;
 
 insert into m_0417_2 values(3,'3456','','010-3333-3333'); 
---unique null값 가능
+-- unique null값 가능
 
 drop table m_0417;
 drop table m_0417_2;
@@ -65,7 +65,7 @@ name varchar2(20) not null,
 salary number(4) check (salary between 500 and 5000),
 gender varchar2(1) check (gender in('M','F')));
 
---CHECK는 대소문자 구분함
+-- CHECK는 대소문자 구분함
 
 insert into m_0417_4 values(1,'홍길동','500','M');
 
@@ -103,12 +103,12 @@ s_rank number(5) default 0,
 s_address varchar2(20) default '서울',
 s_date date default sysdate);
 
---default 데이터값을 아무것도 안 넣으면 넣을 값
+-- default 데이터값을 아무것도 안 넣으면 넣을 값
 
 commit;
 
---insert into student (s_num, s_name, s_kor, s_eng, s_math, s_total, s_avg) 
---values (1,'홍길동',100,100,100,(s_kor+s_eng+s_math),(s_kor+s_eng+s_math)/3);
+-- insert into student (s_num, s_name, s_kor, s_eng, s_math, s_total, s_avg) 
+-- values (1,'홍길동',100,100,100,(s_kor+s_eng+s_math),(s_kor+s_eng+s_math)/3);
 
 insert into student (s_num, s_name, s_kor, s_eng, s_math, s_total, s_avg) 
 values (1,'홍길동',100,100,100,300,300/3);
@@ -137,7 +137,7 @@ insert into student (s_num, s_name, s_kor, s_eng, s_math, s_total, s_avg)
 values (b_seq.nextval, '유관순', 100, 80, 90, 270, 270/3);
 
 select b_seq.currval from dual;
---시퀸스 현재까지 진행된 숫자 
+-- 시퀸스 현재까지 진행된 숫자 
 
 create sequence d_seq
 increment by 2
@@ -147,7 +147,7 @@ maxvalue 10000
 nocycle;
 
 select d_seq.currval from dual;
---시퀸스 현재까지 진행된 숫자 
+-- 시퀸스 현재까지 진행된 숫자 
 
 
 drop table dept2;
@@ -192,7 +192,7 @@ gender varchar2(10) check(gender in('남성','여성')),
 news varchar2(10),
 sms varchar2(10));
 
---order는 이름으로 사용할 수 없음...!!
+-- order는 이름으로 사용할 수 없음...!!
 
 create sequence three
 increment by 1
