@@ -28,7 +28,7 @@ select 34.78, round(34.7558,2), floor(34.78) from dual;
 select 34.78, round(2834.6789,-1), floor(34.78), trunc(34.5678) from dual; 
 --34.78/2830/34/34
 
---★ round(숫자,반올림 자리수[-1이면 소수점쪽 말고 왼쪽으로]) , floor 버림 ★
+-- ★ round(숫자,반올림 자리수[-1이면 소수점쪽 말고 왼쪽으로]) , floor 버림 ★
 
 select  distinct manager_id from employees where manager_id=100 order by manager_id asc;
 --distinct 중복제거
