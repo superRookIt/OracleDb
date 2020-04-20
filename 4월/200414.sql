@@ -22,3 +22,5 @@ insert into member3 values ('홍길동', sysdate);
 select * from member3;
 
 select id,pw from member2 where id='aaa' and pw='123';
+                
+commit;
